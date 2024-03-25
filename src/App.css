@@ -44,6 +44,21 @@ nav {
   color: black;
   font-size: 1.1rem;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar-buttons-container button {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  display: inline;
+  margin-right: 30px;
+  margin-left: 30px;
+
 }
 
 .primary-button {
@@ -60,6 +75,7 @@ nav {
 
 .navbar-cart-icon {
   font-size: 1.15rem;
+
 }
 
 .primary-button:hover {
@@ -247,9 +263,6 @@ nav {
   color: #585858;
 }
 
-/* .footer-section-one {
-  border: 2px solid blue;
-} */
 .footer-section-two {
   flex: 1;
   display: flex;

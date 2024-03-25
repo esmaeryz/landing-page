@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 // components
 import Home from "./Home";
@@ -27,6 +27,17 @@ import {
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const sectionRef = useRef(null);
+  const secondSectionRef = useRef(null);
+  const thirdSectionRef = useRef(null);
+  const fourthSectionRef = useRef(null);
+  const fifthSectionRef = useRef(null);
+
+  const executeScroll = (takenRef) => {
+    if (takenRef?.current) {
+      takenRef.current.scrollIntoView();
+    }
+  };
 
   return (
     <>
@@ -34,14 +45,47 @@ const Navbar = () => {
         <div className="nav-logo-container">
           <img src={Logo} alt="" />
         </div>
-        <div className="navbar-links-container">
-          <button>Home</button>
-          <a href="">About</a>
-          <a href="">Testimonials</a>
-          <a href="">Contact</a>
-          <a href="">
+        <div className="navbar-buttons-container">
+          <button
+            onClick={() => {
+              executeScroll(sectionRef);
+            }}
+          >
+            Home
+          </button>
+          <button
+            onClick={() => {
+              executeScroll(secondSectionRef);
+            }}
+          >
+            About
+          </button>
+          <button
+            onClick={() => {
+              executeScroll(thirdSectionRef);
+            }}
+          >
+            Work
+          </button>
+          <button
+            onClick={() => {
+              executeScroll(fourthSectionRef);
+            }}
+          >
+            Testimonials
+          </button>
+          <button
+            onClick={() => {
+              executeScroll(fifthSectionRef);
+            }}
+          >
+            Contact
+          </button>
+          <button>
             <BsCart2 className="navbar-cart-icon" />
-          </a>
+          </button>
+        </div>
+        <div className="navbar-links-container">
           <button className="primary-button">Bookings Now</button>
         </div>
         <div className="navbar-menu-container">
@@ -71,13 +115,25 @@ const Navbar = () => {
           </Box>
         </Drawer>
       </nav>
-      <div>
-        <Home />
-        <About />
-        <Work />
-        <Testimonial />
-        <Contact />
-        <Footer />
+      <div className="main-section">
+        <div className="first-section" ref={sectionRef}>
+          <Home />
+        </div>
+        <div className="second-section" ref={secondSectionRef}>
+          <About />
+        </div>
+        <div className="third-section" ref={thirdSectionRef}>
+          <Work />
+        </div>
+        <div className="fourth-section" ref={fourthSectionRef}>
+          <Testimonial />
+        </div>
+        <div className="fifth-section" ref={fifthSectionRef}>
+          <Contact />
+        </div>
+        <div className="sixth-section">
+          <Footer />
+        </div>
       </div>
     </>
   );

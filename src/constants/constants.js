@@ -3,6 +3,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 const MENU_OPTIONS = [
   {
@@ -12,6 +13,10 @@ const MENU_OPTIONS = [
   {
     text: "About",
     icon: <InfoIcon />,
+  },
+  {
+    text: "Work",
+    icon: <HelpOutlineIcon />,
   },
   {
     text: "Testimonials",
